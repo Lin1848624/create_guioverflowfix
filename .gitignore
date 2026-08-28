@@ -1,0 +1,21 @@
+# Gradle
+.gradle/
+build/
+build.log
+
+# 运行时依赖 jar（从 maven 下载，不入库）
+libs/
+
+# 文档备份
+*.bak
+*.bak.*
+
+# IDE
+.idea/
+*.iml
+.vscode/
+out/
+
+# OS
+Thumbs.db
+.DS_Store

@@ -1,0 +1,81 @@
+plugins {
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'org.spongepowered.mixin' version '0.7.+'
+}
+
+group = 'com.createfix'
+version = '1.0.0'
+
+base {
+    archivesName = 'create_guioverflowfix'
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(17)
+}
+
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'forge.enabledGameTestNamespaces', 'create_guioverflowfix'
+            mods {
+                create_guioverflowfix {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        server {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'forge.enabledGameTestNamespaces', 'create_guioverflowfix'
+            mods {
+                create_guioverflowfix {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+mixin {
+    add sourceSets.main, 'create_guioverflowfix.refmap.json'
+    config 'create_guioverflowfix.mixins.json'
+}
+
+repositories {
+    flatDir { dirs 'libs' }
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.4.22'
+
+    compileOnly fg.deobf('lib:create:6.0.8')
+    compileOnly fg.deobf('lib:ponder:1.0.91')
+    compileOnly fg.deobf('lib:flywheel:1.0.5')
+    compileOnly fg.deobf('lib:registrate:1.3.3')
+
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+}
+
+jar {
+    manifest {
+        attributes([
+            'Specification-Title'    : 'create_guioverflowfix',
+            'Specification-Version'  : '1',
+            'Implementation-Title'   : 'Create GUI Overflow Fix',
+            'Implementation-Version' : project.version,
+        ])
+    }
+    finalizedBy 'reobfJar'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

@@ -1,0 +1,33 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="create_guioverflowfix"
+version="1.0.0"
+displayName="Create GUI Overflow Fix"
+authors="createfix"
+description='''修复机械动力（Create）数值调节界面在超大堆叠数下崩溃/卡死的问题。
+
+Fix for the Create value-settings screen crash with huge stack sizes (Bigger Stacks / Stacc).'''
+
+[[dependencies.create_guioverflowfix]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.create_guioverflowfix]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1]"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.create_guioverflowfix]]
+    modId="create"
+    mandatory=true
+    versionRange="[6.0.8]"
+    ordering="AFTER"
+    side="BOTH"
