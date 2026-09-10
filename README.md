@@ -83,6 +83,7 @@ gradle build
 
 - 仓库：https://github.com/Lin1848624/create_guioverflowfix
 - 下载：https://github.com/Lin1848624/create_guioverflowfix/releases
+- 更新日志：[CHANGELOG.md](CHANGELOG.md)
 
 ## 致谢
 
