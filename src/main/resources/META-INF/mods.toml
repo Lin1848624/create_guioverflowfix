@@ -4,12 +4,14 @@ license="MIT"
 
 [[mods]]
 modId="create_guioverflowfix"
-version="1.0.0"
+version="1.0.1"
 displayName="Create GUI Overflow Fix"
 authors="createfix"
-description='''修复机械动力（Create）数值调节界面在超大堆叠数下崩溃/卡死的问题。
+description='''修复机械动力（Create）计数过滤界面在超大物品堆叠数下崩溃 / 卡死的问题。
 
-Fix for the Create value-settings screen crash with huge stack sizes (Bigger Stacks / Stacc).'''
+Fix for the Create count-filter value screen crashing or freezing with huge stack sizes (Bigger Stacks / Stacc).
+
+仅在机械动力 6.0.8 上测试（Minecraft 1.20.1 / Forge 47.4.22），其他版本未经测试，可能有效也可能无效。安装后计数过滤的最大值为 64。'''
 
 [[dependencies.create_guioverflowfix]]
     modId="forge"
@@ -28,6 +30,6 @@ Fix for the Create value-settings screen crash with huge stack sizes (Bigger Sta
 [[dependencies.create_guioverflowfix]]
     modId="create"
     mandatory=true
-    versionRange="[6.0.8]"
+    versionRange="[6.0.8,)"
     ordering="AFTER"
     side="BOTH"

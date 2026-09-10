@@ -1,5 +1,7 @@
 # Create GUI Overflow Fix — 设计文档
 
+> **实现状态（2026-09-10 补充）**：本文件是实现前的设计稿。最终发布的版本**没有**采用 §4 的“方案 A”，而是采用了 §4 备选中“方案 C”的思路：拦截 `FilteringBehaviour#createBoard()` 中的 `ItemStack#getMaxStackSize()`，把数值收拢到 64。因此 §3 中“固定宽度数值条 / 比例坐标 / K/M/B 紧凑显示”的目标、以及 §6 的全部配置项均未实现。实际行为请以仓库根目录的 README 为准。
+
 - 日期：2026-08-24（v2，按 Create 6.0.8 修正）
 - 目标平台：Minecraft 1.20.1 · Forge 47.4.22 · Create 6.0.8（依赖 Flywheel / Ponder）
 - mod id：`create_guioverflowfix`
